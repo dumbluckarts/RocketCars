@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/NoahCar1.obj-d40aea040adb98ec2e45e4d5552cd1e5.mesh"
+
+[deps]
+
+files=[ "res://.import/NoahCar1.obj-d40aea040adb98ec2e45e4d5552cd1e5.mesh" ]
+
+source_file="res://Assets/Cars/NoahCar1.obj"
+dest_files=[ "res://.import/NoahCar1.obj-d40aea040adb98ec2e45e4d5552cd1e5.mesh", "res://.import/NoahCar1.obj-d40aea040adb98ec2e45e4d5552cd1e5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

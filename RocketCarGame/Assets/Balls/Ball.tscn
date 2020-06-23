@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Balls/Ball.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Balls/Ball_Ball_Normal.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Balls/Ball_Ball_Roughness.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Balls/Ball_Ball_BaseColor.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Balls/Ball_Ball_Metallic.png" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 4 )
+metallic = 1.0
+metallic_texture = ExtResource( 5 )
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+
+[sub_resource type="SphereShape" id=2]
+radius = 10.53
+
+[node name="Ball" type="RigidBody"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )

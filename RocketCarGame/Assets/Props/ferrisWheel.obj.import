@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ferrisWheel.obj-41027eb96a7a9127dd63594e3bf47611.mesh"
+
+[deps]
+
+files=[ "res://.import/ferrisWheel.obj-41027eb96a7a9127dd63594e3bf47611.mesh" ]
+
+source_file="res://Assets/Props/ferrisWheel.obj"
+dest_files=[ "res://.import/ferrisWheel.obj-41027eb96a7a9127dd63594e3bf47611.mesh", "res://.import/ferrisWheel.obj-41027eb96a7a9127dd63594e3bf47611.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
