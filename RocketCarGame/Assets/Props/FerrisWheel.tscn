@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Props/ferrisWheel.obj" type="ArrayMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.94902, 0.0117647, 0.0117647, 1 )
+albedo_color = Color( 0, 0.694118, 1, 1 )
 
 [node name="FerrisWheel" type="Spatial"]
 
