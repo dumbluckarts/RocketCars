@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Balls/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Arenas/Arena_01.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Props/FerrisWheel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Cars/Car.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Cars/Vehicle.tscn" type="PackedScene" id=5]
 
 [node name="Root" type="Spatial"]
 
@@ -15,16 +15,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.97029, 18.1467 )
 [node name="FerrisWheel" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.0193811, 0, -0.199059, 0, 0.2, 0, 0.199059, 0, -0.0193811, 10.2945, 5.59047, -4.78989 )
 
-[node name="Car" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.07302e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -4.07302e-08, -11.0842, 0.0519645, 0 )
-SPEED = 3.0
-GRAVITY = 1.0
-JUMP_SPEED = 20.0
-DRAG = 0.1
-MAX_SPEED = 20.0
-MAX_FALL_SPEED = 50.0
-
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 4.27293, 0 )
-collision_layer = 2
-collision_mask = 2
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.59764, 0 )
+mass = 0.5
+axis_lock_linear_z = true
+
+[node name="Vehicle" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -11, 3.54116, 0 )
+axis_lock_angular_x = true
+axis_lock_angular_z = false
+linear_damp = 0.5
+MAX_SPEED = 5.0
+MAX_FALL_SPEED = 5.0
+ENGINE_POWER = 10.0
+JUMP_POWER = 300.0

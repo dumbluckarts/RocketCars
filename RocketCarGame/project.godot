@@ -57,6 +57,11 @@ brake={
  ]
 }
 
+[physics]
+
+3d/active_soft_world=false
+3d/smooth_trimesh_collision=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

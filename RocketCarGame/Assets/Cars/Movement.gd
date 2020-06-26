@@ -25,7 +25,7 @@ func right(reset):
 
 func stop():
 	direction = 0
-	
+
 
 func move():
 	if velocity.x < MAX_SPEED:
@@ -34,7 +34,8 @@ func move():
 		velocity.x = MAX_SPEED
 #	if velocity.x > 0:
 #		drag()
-	
+	if direction == 0:
+		drag()
 	var new_velocity = Vector3(velocity.x * direction, velocity.y, 0)
 	move_and_slide(new_velocity, UP)
 
@@ -46,7 +47,7 @@ func grav(delta):
 	velocity.y -= GRAVITY
 
 func drag():
-	velocity.x = lerp(velocity.x, 0.0, DRAG)
+	velocity.x -= lerp(velocity.x, 0.0, DRAG)
 #	print("before " + str(velocity.x))
 #	if velocity.x <= 0: return
 #	velocity.x -= DRAG
