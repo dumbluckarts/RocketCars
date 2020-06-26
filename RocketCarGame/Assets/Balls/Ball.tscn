@@ -19,6 +19,8 @@ normal_texture = ExtResource( 2 )
 radius = 10.53
 
 [node name="Ball" type="RigidBody"]
+mass = 0.2
+axis_lock_linear_z = true
 __meta__ = {
 "_edit_group_": true
 }
