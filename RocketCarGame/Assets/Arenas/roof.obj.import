@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/roof.obj-7706eada1018018e0de194dda5584ebe.mesh"
+
+[deps]
+
+files=[ "res://.import/roof.obj-7706eada1018018e0de194dda5584ebe.mesh" ]
+
+source_file="res://Assets/Arenas/roof.obj"
+dest_files=[ "res://.import/roof.obj-7706eada1018018e0de194dda5584ebe.mesh", "res://.import/roof.obj-7706eada1018018e0de194dda5584ebe.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
