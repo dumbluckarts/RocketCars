@@ -17,11 +17,6 @@ transform = Transform( -0.0193811, 0, -0.199059, 0, 0.2, 0, 0.199059, 0, -0.0193
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.59764, 0 )
-mass = 0.2
-axis_lock_linear_z = true
 
 [node name="Vehicle" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -11, 3.54116, 0 )
-gravity_scale = 1.5
-axis_lock_angular_x = true
-linear_damp = 0.5
