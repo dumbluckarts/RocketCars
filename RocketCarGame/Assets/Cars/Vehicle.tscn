@@ -5,7 +5,6 @@
 
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 0.0
-absorbent = true
 
 [sub_resource type="BoxShape" id=2]
 margin = 0.01
@@ -15,10 +14,16 @@ extents = Vector3( 3.04959, 2.74872, 6.19176 )
 
 [node name="Vehicle" type="RigidBody"]
 physics_material_override = SubResource( 3 )
+gravity_scale = 1.5
 axis_lock_linear_z = true
+axis_lock_angular_x = true
 axis_lock_angular_y = true
-axis_lock_angular_z = true
+linear_damp = 0.5
 script = ExtResource( 2 )
+MAX_SPEED = 20.0
+MAX_FALL_SPEED = 15.0
+ENGINE_POWER = 10.0
+JUMP_POWER = 450.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.8, 0 )

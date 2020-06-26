@@ -33,5 +33,5 @@ func move():
 		add_central_force(X_VECTOR * ENGINE_POWER * direction)
 	if (direction == 1 ) and (linear_velocity.x < MAX_SPEED):
 		add_central_force(X_VECTOR * ENGINE_POWER * direction)
-	if direction == 2:
+	if direction == 2 and (linear_velocity.y > -MAX_FALL_SPEED):
 		add_central_force(Y_VECTOR * JUMP_POWER)
