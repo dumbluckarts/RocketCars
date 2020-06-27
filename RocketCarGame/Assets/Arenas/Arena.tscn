@@ -1,25 +1,25 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Arenas/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Arenas/Arena_02Walls.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Arenas/Arena_02Roof.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Arenas/mat_ArenaCurve.tres" type="Material" id=3]
 [ext_resource path="res://Assets/Arenas/Arena_02Base.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BaseColor.tres" type="Material" id=5]
-[ext_resource path="res://Base_Grass_Color.tres" type="Material" id=6]
 [ext_resource path="res://Assets/Props/building_01.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/Arenas/mat_Wall.tres" type="Shader" id=8]
 [ext_resource path="res://Panorama.hdr" type="Texture" id=12]
 
-[sub_resource type="BakedLightmapData" id=1]
-bounds = AABB( -10, -10, -10, 20, 20, 20 )
-cell_space_transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 20, 20, 20 )
-cell_subdiv = 7
+[sub_resource type="BakedLightmapData" id=6]
+bounds = AABB( -28.4771, -30.0762, -38.5896, 56.9542, 60.1525, 77.1792 )
+cell_space_transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 56.9542, 60.1525, 77.1792 )
+cell_subdiv = 9
 octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
 
 [sub_resource type="GIProbeData" id=2]
-bounds = AABB( -29.707, -29.5301, -33.208, 59.414, 59.0602, 66.416 )
-cell_size = 0.518875
-to_cell_xform = Transform( 1.92725, 0, 0, 0, 1.92725, 0, 0, 0, 1.92725, 57.2527, 56.9118, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3412, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -29.707, -29.5301, -34.7615, 59.414, 59.0602, 69.523 )
+cell_size = 0.543148
+to_cell_xform = Transform( 1.84112, 0, 0, 0, 1.84112, 0, 0, 0, 1.84112, 54.6941, 54.3684, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 1056964608, 1059760811, 1056964608, 1051372203, 1056964608, 1065353216, 1056964608, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -33,59 +33,63 @@ panorama = ExtResource( 12 )
 background_mode = 2
 background_sky = SubResource( 3 )
 background_energy = 0.54
-ambient_light_color = Color( 0.803922, 0.803922, 0.803922, 1 )
-ambient_light_sky_contribution = 0.52
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.64
 ssao_intensity = 122.0
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 8 )
 
 [node name="Arena" type="Node"]
 
 [node name="Lighting" type="Node" parent="."]
 
 [node name="BakedLightmap" type="BakedLightmap" parent="Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.7019, -25.6196 )
+bake_extents = Vector3( 28.4771, 30.0762, 38.5896 )
 capture_cell_size = 1.0
-light_data = SubResource( 1 )
+light_data = SubResource( 6 )
 
 [node name="GIProbe" type="GIProbe" parent="Lighting"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.6438, -23.7653 )
-extents = Vector3( 29.707, 29.5301, 33.208 )
+extents = Vector3( 29.707, 29.5301, 34.7615 )
 data = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 0.953201, -7.13677e-08, 0.302336, -0.112268, 0.928499, 0.353957, -0.280719, -0.371335, 0.885046, 0, 2.41679, 0 )
-light_color = Color( 0.976471, 0.941176, 0.870588, 1 )
-light_energy = 6.0
+transform = Transform( 0.953201, -7.84696e-08, 0.302336, -0.112268, 0.928499, 0.353957, -0.280719, -0.371335, 0.885046, 0, 2.41679, 0 )
+light_color = Color( 0.882353, 0.870588, 0.843137, 1 )
+light_energy = 3.23
 light_indirect_energy = 2.67
 shadow_enabled = true
 shadow_contact = 0.06
-directional_shadow_max_distance = 73.0
+directional_shadow_max_distance = 157.7
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource( 4 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415555, 8.70552, -2.34164 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415555, 6.44658, -2.34164 )
 max_distance = 3.5
-extents = Vector3( 26.6612, 6.5564, 13.8613 )
+extents = Vector3( 26.6612, 7.99624, 13.8613 )
 box_projection = true
 enable_shadows = true
 
 [node name="ArenaMesh" type="Node" parent="."]
 
 [node name="Ground" parent="ArenaMesh" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.407637, 0.0348206, 6.84113 )
-material/0 = ExtResource( 6 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.407637, 0.0348206, -15.398 )
 
 [node name="Walls" parent="ArenaMesh" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material/0 = ExtResource( 5 )
-
-[node name="Roof" parent="ArenaMesh" instance=ExtResource( 3 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material_override = ExtResource( 5 )
+material_override = SubResource( 5 )
 
 [node name="ArenaTesty2" parent="ArenaMesh" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material_override = ExtResource( 5 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 3.50537e-06, 0.0896606, -14.663 )
+material_override = ExtResource( 3 )
+
+[node name="ArenaTesty3" parent="ArenaMesh" instance=ExtResource( 4 )]
+transform = Transform( -1.94707e-07, 0, -1, 0, -1, 0, 1, 0, -1.94707e-07, 3.50537e-06, 13.9318, -14.663 )
+material_override = ExtResource( 3 )
 
 [node name="BackgroundProps" type="Node" parent="."]
 

@@ -14,7 +14,8 @@ roughness = 0.0
 [node name="Root" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 28.379 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 40.123 )
+fov = 27.8
 
 [node name="FerrisWheel" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.20176, 0, -0.589093, 0, 0.622685, 0, 0.589093, 0, -0.20176, 30.0413, 16.3456, -26.6419 )
@@ -39,13 +40,7 @@ material/8 = null
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -11, 3.54116, 0 )
 
 [node name="ChromeBallTest" type="MeshInstance" parent="."]
-transform = Transform( 0.312869, 0, 0, 0, 0.312869, 0, 0, 0, 0.312869, 7.03542, 5.07844, -9.18328 )
-material_override = SubResource( 1 )
-mesh = ExtResource( 12 )
-material/0 = null
-
-[node name="ChromeBallTest2" type="MeshInstance" parent="."]
-transform = Transform( 0.312869, 0, 0, 0, 0.312869, 0, 0, 0, 0.312869, -11.3908, 1.18828, -9.18328 )
+transform = Transform( 0.312869, 0, 0, 0, 0.312869, 0, 0, 0, 0.312869, 13.7524, 5.07844, -15.0098 )
 material_override = SubResource( 1 )
 mesh = ExtResource( 12 )
 material/0 = null
