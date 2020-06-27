@@ -1,60 +1,20 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Balls/Ball.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Arenas/Arena_01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Arenas/Arena.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Props/FerrisWheel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Arenas/Arena_02Walls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Cars/Vehicle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Arenas/Ground.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Arenas/Arena_02Base.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Arenas/Arena_02Roof.tscn" type="PackedScene" id=8]
-[ext_resource path="res://BaseColor.tres" type="Material" id=9]
 [ext_resource path="res://Assets/Cars/SportsCarTest.obj" type="ArrayMesh" id=10]
-[ext_resource path="res://Assets/Props/building_01.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://Assets/Balls/Ball.obj" type="ArrayMesh" id=12]
-[ext_resource path="res://Panorama.hdr" type="Texture" id=13]
-[ext_resource path="res://Base_Grass_Color.tres" type="Material" id=14]
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="BakedLightmapData" id=7]
-bounds = AABB( -10, -10, -10, 20, 20, 20 )
-cell_space_transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 20, 20, 20 )
-cell_subdiv = 7
-octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
-
-[sub_resource type="GIProbeData" id=3]
-bounds = AABB( -29.707, -29.5301, -33.208, 59.414, 59.0602, 66.416 )
-cell_size = 0.518875
-to_cell_xform = Transform( 1.92725, 0, 0, 0, 1.92725, 0, 0, 0, 1.92725, 57.2527, 56.9118, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, -1059992051, 0, 0, 7, 0, 1, 4026, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.7
-
-[sub_resource type="PanoramaSky" id=5]
-radiance_size = 0
-panorama = ExtResource( 13 )
-
-[sub_resource type="Environment" id=6]
-background_mode = 2
-background_sky = SubResource( 5 )
-background_energy = 0.54
-ambient_light_color = Color( 0.803922, 0.803922, 0.803922, 1 )
-ambient_light_sky_contribution = 0.52
-ssao_intensity = 122.0
-
 [node name="Root" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.97029, 28.379 )
-
-[node name="Arena" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6431 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 28.379 )
 
 [node name="FerrisWheel" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.20176, 0, -0.589093, 0, 0.622685, 0, 0.589093, 0, -0.20176, 30.0413, 16.3456, -26.6419 )
@@ -90,76 +50,4 @@ material_override = SubResource( 1 )
 mesh = ExtResource( 12 )
 material/0 = null
 
-[node name="Lighting" type="Node" parent="."]
-
-[node name="BakedLightmap" type="BakedLightmap" parent="Lighting"]
-capture_cell_size = 1.0
-light_data = SubResource( 7 )
-
-[node name="GIProbe" type="GIProbe" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.6438, -23.7653 )
-extents = Vector3( 29.707, 29.5301, 33.208 )
-data = SubResource( 3 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
-transform = Transform( 0.953201, -7.13677e-08, 0.302336, -0.112268, 0.928499, 0.353957, -0.280719, -0.371335, 0.885046, 0, 2.41679, 0 )
-light_color = Color( 0.976471, 0.941176, 0.870588, 1 )
-light_energy = 6.0
-light_indirect_energy = 2.67
-shadow_enabled = true
-shadow_contact = 0.06
-directional_shadow_max_distance = 73.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource( 6 )
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415555, 8.70552, -2.34164 )
-max_distance = 3.5
-extents = Vector3( 26.6612, 6.5564, 13.8613 )
-box_projection = true
-enable_shadows = true
-
-[node name="ArenaMesh" type="Node" parent="."]
-
-[node name="Ground" parent="ArenaMesh" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 6.85273 )
-material/0 = ExtResource( 14 )
-
-[node name="walls" parent="ArenaMesh" instance=ExtResource( 4 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material/0 = ExtResource( 9 )
-
-[node name="roof" parent="ArenaMesh" instance=ExtResource( 8 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material_override = ExtResource( 9 )
-
-[node name="ArenaTesty2" parent="ArenaMesh" instance=ExtResource( 7 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
-material_override = ExtResource( 9 )
-
-[node name="BackgroundProps" type="Node" parent="."]
-
-[node name="building_01" type="MeshInstance" parent="BackgroundProps"]
-transform = Transform( 0.997744, 0, 0, 0, 0.997744, 0, 0, 0, 0.997744, -6.3551, -10.569, -38.662 )
-use_in_baked_light = true
-mesh = ExtResource( 11 )
-material/0 = ExtResource( 9 )
-material/1 = ExtResource( 9 )
-material/2 = ExtResource( 9 )
-material/3 = ExtResource( 9 )
-material/4 = ExtResource( 9 )
-material/5 = ExtResource( 9 )
-material/6 = ExtResource( 9 )
-
-[node name="building_02" type="MeshInstance" parent="BackgroundProps"]
-transform = Transform( 0.997744, 0, 0, 0, 0.997744, 0, 0, 0, 0.997744, 20.3143, -10.569, -45.0387 )
-use_in_baked_light = true
-mesh = ExtResource( 11 )
-material/0 = ExtResource( 9 )
-material/1 = ExtResource( 9 )
-material/2 = ExtResource( 9 )
-material/3 = ExtResource( 9 )
-material/4 = ExtResource( 9 )
-material/5 = ExtResource( 9 )
-material/6 = ExtResource( 9 )
+[node name="Arena" parent="." instance=ExtResource( 2 )]
