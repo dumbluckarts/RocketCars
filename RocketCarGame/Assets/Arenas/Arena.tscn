@@ -19,7 +19,7 @@ octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 bounds = AABB( -29.707, -29.5301, -34.7615, 59.414, 59.0602, 69.523 )
 cell_size = 0.543148
 to_cell_xform = Transform( 1.84112, 0, 0, 0, 1.84112, 0, 0, 0, 1.84112, 54.6941, 54.3684, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 1056964608, 1059760811, 1056964608, 1051372203, 1056964608, 1065353216, 1056964608, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 3342385, 0, 0, 7, 0, 9, 36, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -35,6 +35,7 @@ background_sky = SubResource( 3 )
 background_energy = 0.54
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.64
+fog_transmit_enabled = true
 ssao_intensity = 122.0
 
 [sub_resource type="ShaderMaterial" id=5]
@@ -77,10 +78,10 @@ enable_shadows = true
 [node name="ArenaMesh" type="Node" parent="."]
 
 [node name="Ground" parent="ArenaMesh" instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.407637, 0.0348206, -15.398 )
+transform = Transform( -6.49708e-08, 0, -1.48636, 0, 1.14214, 0, 1.09265, 0, -4.77611e-08, -0.407637, 0.0348206, -18.0167 )
 
 [node name="Walls" parent="ArenaMesh" instance=ExtResource( 2 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 6.85273 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, -14.7681 )
 material_override = SubResource( 5 )
 
 [node name="ArenaTesty2" parent="ArenaMesh" instance=ExtResource( 4 )]
@@ -88,7 +89,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 3.50537
 material_override = ExtResource( 3 )
 
 [node name="ArenaTesty3" parent="ArenaMesh" instance=ExtResource( 4 )]
-transform = Transform( -1.94707e-07, 0, -1, 0, -1, 0, 1, 0, -1.94707e-07, 3.50537e-06, 13.9318, -14.663 )
+transform = Transform( -1.94707e-07, 0, -1, 0, -1, 0, 1, 0, -1.94707e-07, 3.50537e-06, 12.2565, -14.663 )
 material_override = ExtResource( 3 )
 
 [node name="BackgroundProps" type="Node" parent="."]

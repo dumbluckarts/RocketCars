@@ -15,7 +15,7 @@ roughness = 0.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 40.123 )
-fov = 27.8
+fov = 43.5
 
 [node name="FerrisWheel" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.20176, 0, -0.589093, 0, 0.622685, 0, 0.589093, 0, -0.20176, 30.0413, 16.3456, -26.6419 )
